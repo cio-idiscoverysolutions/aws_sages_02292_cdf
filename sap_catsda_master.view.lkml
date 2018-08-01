@@ -1,5 +1,5 @@
 view: sap_catsda_master {
-  sql_table_name: dbo.SAP_CATSDA_MASTER ;;
+  sql_table_name: dbo.cdf_SAP_CATSDA_MASTER ;;
 
   dimension: aatype {
     type: string

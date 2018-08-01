@@ -3,8 +3,7 @@ connection: "aws_sages-02292_cdf"
 # include all the views
 include: "*.view"
 
-# include all the dashboards
-include: "*.dashboard"
+
 
 datagroup: aws_sages_02292_cdf_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;

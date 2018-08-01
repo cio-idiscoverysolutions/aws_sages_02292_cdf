@@ -1,5 +1,5 @@
 view: sap_created_master {
-  sql_table_name: dbo.SAP_CREATED_MASTER ;;
+  sql_table_name: dbo.cdf_SAP_CREATED_MASTER ;;
 
   dimension: auth__scope {
     type: string

@@ -1,5 +1,5 @@
 view: sap_changed_master {
-  sql_table_name: dbo.SAP_CHANGED_MASTER ;;
+  sql_table_name: dbo.cdf_SAP_CHANGED_MASTER ;;
 
   dimension: 3byte_field {
     type: string

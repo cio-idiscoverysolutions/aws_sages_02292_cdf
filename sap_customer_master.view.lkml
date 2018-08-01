@@ -1,5 +1,5 @@
 view: sap_customer_master {
-  sql_table_name: dbo.SAP_CUSTOMER_MASTER ;;
+  sql_table_name: dbo.cdf_SAP_CUSTOMER_MASTER ;;
 
   dimension: address_number {
     type: string

@@ -1,5 +1,5 @@
 view: cisco_logon_master {
-  sql_table_name: dbo.CISCO_LOGON_MASTER ;;
+  sql_table_name: dbo.cdf_CISCO_LOGON_MASTER ;;
 
   dimension: ad_domain_logon {
     type: string
