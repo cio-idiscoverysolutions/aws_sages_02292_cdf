@@ -8,6 +8,8 @@ view: looker_final_summary_daily_v001 {
       date,
       week,
       month,
+      month_name,
+      day_of_week,
       quarter,
       year
     ]
