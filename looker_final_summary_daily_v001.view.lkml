@@ -173,4 +173,14 @@ dimension: Est_Shift_Duration_Bucket {
   }
 
 
+dimension:  Estimated_Duration_Net_Hours {
+  type:  number
+  sql:  ${TABLE}.Estimated_Duration_Net_Hours ;;
+}
+
+dimension:  F2L_Duration_Hours {
+type:  number
+sql:  ${TABLE}.F2L_Duration_Hours ;;
+}
+
 }
