@@ -183,4 +183,14 @@ type:  number
 sql:  ${TABLE}.F2L_Duration_Hours ;;
 }
 
+  measure:  Estimated_Duration_Net_Hours_Sum {
+    type:  sum
+    sql:  ${TABLE}.Estimated_Duration_Net_Hours ;;
+  }
+
+  measure:  F2L_Duration_Hours_Sum {
+    type:  sum
+    sql:  ${TABLE}.F2L_Duration_Hours ;;
+  }
+
 }
