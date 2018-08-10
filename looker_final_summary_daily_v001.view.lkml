@@ -150,6 +150,16 @@ view: looker_final_summary_daily_v001 {
     sql: ${TABLE}.Week_num ;;
   }
 
+dimension: Est_Shift_Duration_Bucket {
+  type: string
+  sql:  ${TABLE}.Est_Shift_Duration_Bucket ;;
+}
+
+  dimension: F2L_Duration_Bucket {
+    type: string
+    sql:  ${TABLE}.F2L_Duration_Bucket ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [full_name]
