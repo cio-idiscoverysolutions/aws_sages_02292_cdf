@@ -164,4 +164,11 @@ dimension: Est_Shift_Duration_Bucket {
     type: count
     drill_fields: [full_name]
   }
+
+  measure: Total_Observations {
+    type:  sum
+    sql:  ${TABLE}.Total_Observations ;;
+  }
+
+
 }
