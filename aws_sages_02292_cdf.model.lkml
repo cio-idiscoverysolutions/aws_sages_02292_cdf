@@ -51,3 +51,5 @@ explore: src_dlvry {}
 explore: src_files {}
 
 explore: src_master {}
+
+explore: looker_final_summary_daily_v001 {}
