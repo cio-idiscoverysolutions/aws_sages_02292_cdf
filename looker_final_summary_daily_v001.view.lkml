@@ -108,7 +108,8 @@ view: looker_final_summary_daily_v001 {
       week,
       month,
       quarter,
-      year
+      year,
+      time_of_day
     ]
     sql: ${TABLE}.LunchEnd ;;
   }
@@ -122,7 +123,8 @@ view: looker_final_summary_daily_v001 {
       week,
       month,
       quarter,
-      year
+      year,
+      time_of_day
     ]
     sql: ${TABLE}.LunchStart ;;
   }
