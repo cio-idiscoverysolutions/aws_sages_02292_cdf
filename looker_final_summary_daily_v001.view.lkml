@@ -28,6 +28,7 @@ view: looker_final_summary_daily_v001 {
     timeframes: [
       raw,
       time,
+      time_of_day,
       date,
       week,
       month,
@@ -90,6 +91,7 @@ view: looker_final_summary_daily_v001 {
     timeframes: [
       raw,
       time,
+      time_of_day,
       date,
       week,
       month,
