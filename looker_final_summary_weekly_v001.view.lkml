@@ -34,6 +34,7 @@ view: looker_final_summary_weekly_v001 {
   dimension: week_num {
     type: number
     sql: ${TABLE}.Week_Num ;;
+    value_format: "*0#"
   }
 
   dimension: year {
