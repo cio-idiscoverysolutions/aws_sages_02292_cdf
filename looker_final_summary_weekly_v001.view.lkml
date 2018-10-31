@@ -45,4 +45,23 @@ view: looker_final_summary_weekly_v001 {
     type: count
     drill_fields: [full_name]
   }
+
+
+  measure: sum_total_hours {
+    type: sum
+    sql:  ${total_hours} ;;
+  }
+
+
+  measure: sum_total_evening_hours {
+    type: sum
+    sql:  ${total_evening_shift_hours} ;;
+  }
+
+  measure: sum_total_weekend_hours {
+    type: sum
+    sql:  ${total_weekend_hours} ;;
+  }
+
+
 }
