@@ -83,4 +83,18 @@ view: looker_detail_v002 {
     type: count
     drill_fields: [full_name]
   }
+
+
+  measure: earliest_date {
+    type: date
+    sql: MIN(${date_beg_lcl_date}) ;;
+    convert_tz: no
+  }
+
+  measure: latest_date {
+    type: date
+    sql: MAX(${date_beg_lcl_date}) ;;
+    convert_tz: no
+  }
+
 }
