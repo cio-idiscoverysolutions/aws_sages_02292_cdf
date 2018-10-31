@@ -1,6 +1,11 @@
 view: looker_final_summary_daily_v001 {
   sql_table_name: dbo.Looker_Final_Summary_Daily_v001 ;;
 
+  dimension: badge_to_1st_activity_duration_min {
+    type: number
+    sql: ${TABLE}.Badge_to_1st_Activity_Duration_Min ;;
+  }
+
   dimension_group: date_beg {
     type: time
     timeframes: [
@@ -8,14 +13,12 @@ view: looker_final_summary_daily_v001 {
       date,
       week,
       month,
-      month_name,
-      day_of_week,
       quarter,
       year
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.date_beg_date ;;
+    sql: ${TABLE}.Date_Beg_Date ;;
   }
 
   dimension: date_beg_day {
@@ -28,7 +31,6 @@ view: looker_final_summary_daily_v001 {
     timeframes: [
       raw,
       time,
-      time_of_day,
       minute,
       date,
       week,
@@ -39,17 +41,7 @@ view: looker_final_summary_daily_v001 {
     sql: ${TABLE}.Earliest_Activity ;;
   }
 
-  dimension: estimated_duration_net {
-    type: number
-    sql: ${TABLE}.Estimated_Duration_Net ;;
-  }
-
-  dimension: estimated_shift_duration_gross {
-    type: number
-    sql: ${TABLE}.Estimated_Shift_Duration_Gross ;;
-  }
-
-  dimension_group: estimated_shift_end {
+  dimension_group: first_after_badge {
     type: time
     timeframes: [
       raw,
@@ -60,10 +52,10 @@ view: looker_final_summary_daily_v001 {
       quarter,
       year
     ]
-    sql: ${TABLE}.Estimated_Shift_End ;;
+    sql: ${TABLE}.First_After_Badge ;;
   }
 
-  dimension_group: estimated_shift_start {
+  dimension_group: first_badge_swipe {
     type: time
     timeframes: [
       raw,
@@ -74,17 +66,17 @@ view: looker_final_summary_daily_v001 {
       quarter,
       year
     ]
-    sql: ${TABLE}.Estimated_Shift_Start ;;
+    sql: ${TABLE}.First_Badge_Swipe ;;
   }
 
-  dimension: f2l_duration {
+  dimension: first_last_duration_min {
     type: number
-    sql: ${TABLE}.f2l_duration ;;
+    sql: ${TABLE}.First_Last_Duration_Min ;;
   }
 
   dimension: full_name {
     type: string
-    sql: ${TABLE}.full_name ;;
+    sql: ${TABLE}.Full_Name ;;
   }
 
   dimension_group: latest_activity {
@@ -92,7 +84,6 @@ view: looker_final_summary_daily_v001 {
     timeframes: [
       raw,
       time,
-      time_of_day,
       minute,
       date,
       week,
@@ -103,22 +94,12 @@ view: looker_final_summary_daily_v001 {
     sql: ${TABLE}.Latest_Activity ;;
   }
 
-  dimension_group: lunch_end {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-      time_of_day
-    ]
-    sql: ${TABLE}.LunchEnd ;;
+  dimension: lunch_duration_min {
+    type: number
+    sql: ${TABLE}.Lunch_Duration_Min ;;
   }
 
-  dimension_group: lunch_start {
+  dimension_group: lunch_end_date {
     type: time
     timeframes: [
       raw,
@@ -127,76 +108,63 @@ view: looker_final_summary_daily_v001 {
       week,
       month,
       quarter,
-      year,
-      time_of_day
+      year
     ]
-    sql: ${TABLE}.LunchStart ;;
+    sql: ${TABLE}.Lunch_EndDateTIme ;;
+  }
+
+  dimension_group: lunch_start_date {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.Lunch_StartDateTime ;;
   }
 
   dimension: plaintiff_type {
     type: string
-    sql: ${TABLE}.plaintiff_type ;;
+    sql: ${TABLE}.Plaintiff_Type ;;
   }
 
-  dimension: total_30_min_breaks {
+  dimension: total_evening_shift_min {
     type: number
-    sql: ${TABLE}.Total_30Min_Breaks ;;
+    sql: ${TABLE}.Total_Evening_Shift_Min ;;
   }
 
-  dimension: total_break_minutes {
+  dimension: total_idle_time_min {
     type: number
-    sql: ${TABLE}.Total_Break_Minutes ;;
+    value_format_name: id
+    sql: ${TABLE}.Total_Idle_Time_Min ;;
   }
 
-  dimension: total_events_blocks {
+  dimension: total_inactive_min {
     type: number
-    sql: ${TABLE}.Total_Events_Blocks ;;
+    sql: ${TABLE}.Total_Inactive_Min ;;
+  }
+
+  dimension: total_shift_hours {
+    type: number
+    sql: ${TABLE}.Total_Shift_Hours ;;
+  }
+
+  dimension: verint_day {
+    type: string
+    sql: ${TABLE}.Verint_Day ;;
   }
 
   dimension: week_num {
     type: number
-    sql: ${TABLE}.Week_num ;;
-  }
-
-dimension: Est_Shift_Duration_Bucket {
-  type: string
-  sql:  ${TABLE}.Est_Shift_Duration_Bucket ;;
-}
-
-  dimension: F2L_Duration_Bucket {
-    type: string
-    sql:  ${TABLE}.F2L_Duration_Bucket ;;
+    sql: ${TABLE}.Week_Num ;;
   }
 
   measure: count {
     type: count
     drill_fields: [full_name]
   }
-
-  measure: Total_Observations {
-    type:  sum
-    sql:  ${TABLE}.Total_Observations ;;
-  }
-
-
-dimension:  Estimated_Duration_Net_Hours {
-  type:  number
-  sql:  ${TABLE}.Estimated_Duration_Net_Hours ;;
-}
-
-dimension:  F2L_Duration_Hours {
-type:  number
-sql:  ${TABLE}.F2L_Duration_Hours ;;
-}
-
-  measure:  Estimated_Duration_Net_Hours_Sum {
-    type:  sum
-    sql:  ${TABLE}.Estimated_Duration_Net_Hours ;;
-  }
-
-  measure:  F2L_Duration_Hours_Sum {
-    type:  sum
-    sql:  ${TABLE}.F2L_Duration_Hours ;;
-  }
-
 }
