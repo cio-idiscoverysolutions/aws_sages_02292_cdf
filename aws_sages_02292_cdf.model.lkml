@@ -55,3 +55,5 @@ explore: src_master {}
 explore: looker_final_summary_daily_v001 {}
 
 explore: looker_detail_v001 {}
+
+explore: looker_detail_v002 {}
