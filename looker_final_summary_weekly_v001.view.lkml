@@ -1,6 +1,23 @@
 view: looker_final_summary_weekly_v001 {
   sql_table_name: dbo.Looker_Final_Summary_Weekly_v001 ;;
 
+
+  dimension_group: week_end {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.week_end ;;
+  }
+
+
   dimension: bucket_total_hours {
     type: string
     sql: ${TABLE}.Bucket_Total_Hours ;;
