@@ -167,4 +167,12 @@ view: looker_final_summary_daily_v001 {
     type: count
     drill_fields: [full_name]
   }
+
+  measure: sum_total_shift_hours {
+    type:  sum
+    sql:  ${total_shift_hours} ;;
+
+
+  }
+
 }
