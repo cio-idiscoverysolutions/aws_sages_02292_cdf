@@ -6,6 +6,16 @@ view: looker_final_summary_weekly_v001 {
     sql: ${TABLE}.Bucket_Total_Hours ;;
   }
 
+  dimension: bucket_total_evening_hours {
+    type: string
+    sql: ${TABLE}.Bucket_Total_Evening_Hours ;;
+  }
+
+  dimension: bucket_total_weekend_hours {
+    type: string
+    sql: ${TABLE}.Bucket_Total_weekend_Hours ;;
+  }
+
   dimension: full_name {
     type: string
     sql: ${TABLE}.Full_Name ;;
