@@ -15,6 +15,7 @@ view: looker_detail_v002 {
       time,
       time_of_day,
       hour_of_day,
+      minute,
       date,
       week,
       month,
